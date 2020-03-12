@@ -1,7 +1,7 @@
 <template>
     <div>
         <h3>
-            WelCome
+            来了，老弟
         </h3>
     </div>
 </template>

@@ -141,7 +141,7 @@
         </div>
 
         <span slot="footer" class="dialog-footer">
-          <el-button @click="editdialogVisible = false">取 消</el-button>
+          <el-button @click="setRoleDialogVisible = false">取 消</el-button>
           <el-button type="primary" @click="saveRoleInfo()">确 定</el-button>
         </span>
       </el-dialog>
