@@ -75,7 +75,7 @@
       </el-dialog>
 
       <el-dialog title="物流进度" :visible.sync="progressVisible" width="50%">
-        <el-timeline :reverse="reverse">
+        <el-timeline >
           <el-timeline-item
             v-for="(activity, index) in progressInfo"
             :key="index"
@@ -143,7 +143,6 @@ export default {
       this.addressdialogVisible = true;
     },
     addressdialogClosed() {
-      console.log(this.$refs.addressFormRef);
       this.$refs.addressFormRef.resetFields();
     },
     async showProgressDialog() {

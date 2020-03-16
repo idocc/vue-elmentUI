@@ -10,6 +10,11 @@ import  VueQuillEditor  from 'vue-quill-editor'
 import 'quill/dist/quill.snow.css' 
 //import 'quill/dist/quill.core.css'
 //import 'quill/dist/quill.bubble.css'
+
+//导入NProgress
+import NProgress from 'nprogress'
+
+
 Vue.config.productionTip = false
 
 import axios from 'axios'
@@ -17,8 +22,15 @@ import axios from 'axios'
 
 axios.defaults.baseURL='https://www.liulongbin.top:8888/api/private/v1/'
 
+//request拦截器
 axios.interceptors.request.use(config =>{
   config.headers.authorization =window.sessionStorage.getItem('token')
+  NProgress.start()
+  return config
+})
+//response拦截器中隐藏进度条
+axios.interceptors.response.use(config =>{
+  NProgress.done()
   return config
 })
 
