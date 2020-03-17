@@ -16,6 +16,7 @@ module.exports = {
       }
     ],
     //发布时
-    ...prodPlugins
+    ...prodPlugins,
+    '@babel/plugin-syntax-dynamic-import'
   ]
 }
